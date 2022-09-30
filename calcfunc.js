@@ -17,7 +17,6 @@ button_input.forEach((button_class)=>{
 
     })
 })
-
 equal.addEventListener("click", () => {
     equal_press=1;
     let inp_value=input.value;
@@ -25,21 +24,14 @@ equal.addEventListener("click", () => {
     try {
         let solution = eval(inp_value);
         if(Number.isInteger(solution)){
-            if(solution!==0){
-                addon+=inp_value;
-                input.value = addon;
-            }
+            input.value = solution;
         } else {
-            if(solution!==0){
-                addon+=inp_value;
-                input.value = addon.toFixed(2);
-            }
+            input.value = solution.toFixed(2);
         }
     } catch (err) {
         alert("Invalid Calculation");
     }
 })
-
 
 clear.addEventListener("click",()=>{
     input.value="";
